@@ -2,7 +2,6 @@ Programming assignment 4 (PA04)
 ==============================
 
 # Array list /// std::vector 
-
 ---
 
 ## What is this repository?
@@ -12,8 +11,6 @@ Only add source files (not compiled files) to the Git repository.
 ## Note (actuall do this)!!
 Thoroughly read the syllabus sections on "Programming assignments" and "Grading".
 These sections give good tips, tricks, hints, and instructions for programming assignments, including how to submit via Git.
-
-http://web.mst.edu/~taylorpat/
 
 ## Assignment description
 Mimic the std::vector behavior with your arraylist.

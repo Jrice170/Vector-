@@ -1,4 +1,5 @@
 /* Define all your MyVector-related functions here.
+ * Also, define the swap function here.
  * You do not need to include the h file.
  * It included this file at the bottom.
  */
