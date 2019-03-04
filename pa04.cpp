@@ -1,4 +1,7 @@
-/* Sample tester
+/* Sample main
+ * Disclaimer: this file is not a unit test!
+ * Just because it runs, does NOT mean your assignment is correct.
+ * This file is for developing your own tests.
  * We've included vector below to show you how your types should behave.
  * You can use that for debugging.
  * When implementing your list, you are expected to use the same names and declarations as defined by the STL implementation of an array list, the vector.
@@ -48,7 +51,9 @@ int main()
     v.insert(v.begin(), 3);
     v.insert(v.end(), 20);
 
-    // These are tricky. They look like iterators, but are really just integers.
+    // These below are tricky. 
+    // They look like iterators, but are really just integers.
+    // We are not making you re-implement iterators themselves.
     int j = 0;
 
     for(auto i = v.begin(); i < v.end(); i++)
