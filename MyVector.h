@@ -1,8 +1,6 @@
 /*
  * Simplified version of the std::vector
  * This is your h file. Do not edit it!
- * If you edit it, you risk getting a 0.
- * To see the function specifications in more detail, check en.cppreference!
  */
 
 #ifndef MYVECTOR_H
@@ -11,15 +9,16 @@
 #include <iostream>
 #include <stdexcept>
 #include <string>
-
 using std::cout;
-using std::cerr;
 using std::endl;
 using std::cin;
 using std::string;
 
 /*
-* the your (the student author’s) Campus Username
+Writes to a string array containing:
+    * the your (the student author’s) Campus Username (at index 0)
+    * and Student ID# (at index 1).
+Takes as input a pre-existing length-2 string array.
 */
 void get_identity(string &my_id);
 
@@ -29,8 +28,7 @@ void get_identity(string &my_id);
 // Note: a and b can be any parameters, and just happen to be list this time.
 // e.g., swap(list_obj[2], list_obj[1]);
 // This one is similar to std::swap (you can check it's behavior).
-// This is not a list function, but a general one, that swaps any elements, including array elements.
-// On all assignments after this one, you can use std::swap (but not in this one).
+// This is not a list function, but a general one.
 template <typename T>
 void swap(T &a, T &b);
 
@@ -40,8 +38,8 @@ class MyVector
 {
     private:
         T *m_data;
-        int reserved_size;
-        int data_size;
+        int reserved_size; // capacity
+        int data_size; // size that is updated
 
     public:
         // Should default array pointer to nullptr, and do all the stuff a constructor does.
@@ -79,11 +77,13 @@ class MyVector
         // Other functions should check that their operations are not going beyond the size limit,
         // and call this one if so
         // By default, you should double the size of the current array when it fills up.
-        // NOTE: reserve does not do the checking of whether it's full; another function should do that, and then call reserve, which just adjusts the size to whatever it is called with, only if it is greater than current.
-        // Inital size is 0, so a special case is needed to grow to 1, then 2, 4, etc., which is handled in another function (like push_back for example).
+        // NOTE: reserve does not do the checking of whether it's full; another function
+        //should do that, and then call reserve, which just adjusts the size to whatever it is called with,
+        // only if it is greater than current.
+        // Inital size is 0, so a special case is needed to grow to 1, then 2, 4, etc.,
         void reserve(int new_cap);
 
-        // If your array hits the point at which it is less than ( not <= ) 1/4 full, it should call this function.
+        // If your array hits the point at which it is less than (not <=) 1/4 full, it should call this function.
         // It should shrink such that the array is 2x as big as the data.
         // NOTE: shrink_to_fit does not do the checking of 1/4 full; another function should do that, and then call shrink_to_fit.
         void shrink_to_fit();
@@ -100,13 +100,13 @@ class MyVector
         // Purpose: appends the value x to the end of an MyVector
         // Parameters: x is value to be added to MyVector
         // Postconditions: current size is incremented by 1
-        //     If max size is reached, the storage array is grown.
+        //  If max size is reached, the storage array is grown.
         void push_back(const T &x);
 
         // Removes the last element of the vector
         void pop_back();
 
-        // Purpose: inserts the value x at the position i 
+        // Purpose: inserts the value x at the position i
         //     (before the value currently at i) in the  MyVector
         // Parameters: x is value to be added to MyVector
         //             i is the position to insert x at
@@ -136,6 +136,7 @@ class MyVector
         {
             return size();
         }
+
 };
 
 
@@ -161,4 +162,3 @@ std::ostream & operator<<(std::ostream &out, MyVector<T> &my_list)
 #include "MyVector.hpp"
 
 #endif
-
