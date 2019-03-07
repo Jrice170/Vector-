@@ -42,7 +42,7 @@ T & MyVector<T>::at(int index)
     {
 
       throw std::out_of_range("Its alive !!!!!");
-      
+
     }
     return m_data[index];
 
@@ -130,15 +130,14 @@ int MyVector<T>::capacity()
 }
 
 // question about resereve does this function need exceptions
-
 template <typename T>
 void MyVector<T>::reserve(int new_cap)
 {
 
       if(new_cap > capacity())
       {
-          T *store_data = new T[new_cap];
 
+          T *store_data = new T[new_cap];
           for(int i =0;i<size();i++)
           {
               store_data[i] = m_data[i];
@@ -171,8 +170,16 @@ void MyVector<T>::push_back(const T &x)
 template <typename T>
 void MyVector<T>::pop_back()
 {
+  if(data_size > 0)
+  {
+    data_size--;
+  }
+  if((size())<(capacity())/(4))
+  {
+      shrink_to_fit();
 
-   data_size--;
+  }
+
 
 }
 
@@ -217,7 +224,6 @@ int MyVector<T>::size()
         return 0;
 
     }
-
     return (data_size);
 
 }
@@ -236,7 +242,6 @@ void MyVector<T>::shrink_to_fit()
     reserved_size = new_capacity_size;
     delete [] m_data;
     m_data = Pointer;
-
 
 }
 
