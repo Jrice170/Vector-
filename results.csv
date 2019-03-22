@@ -1,6 +1,2 @@
 Username (not for points),Assign_test.cpp,At_test.cpp,Back_test.cpp,BracketOp_test.cpp,Capacity_test.cpp,Clear_test.cpp,CopyConstructor_test.cpp,Erase_test.cpp,Front_test.cpp,Insert_test.cpp,OpEqual_test.cpp,PopBack_test.cpp,PushBack_test.cpp,Reserve_test.cpp,Shrink_test.cpp,Size_test.cpp,TemplateCheck_test.cpp,"Username accurate (0 good, 1 bad)",Bytes definitely lost (memory leak) (0 is perfect)
-jmr3by,pass,pass,pass,pass,pass,pass,pass,pass,pass,pass,pass,pass,pass,pass,pass,pass,Probably crashed,"name_test/00name_test.cpp:1:10: fatal error: maze.h: No such file or directory
- #include ""maze.h""
-          ^~~~~~~~
-compilation terminated.
-",0
+jmr3by,pass,pass,pass,pass,pass,pass,pass,pass,pass,pass,pass,pass,pass,pass,pass,pass,Probably crashed,0,0
